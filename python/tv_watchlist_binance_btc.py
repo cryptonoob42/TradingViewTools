@@ -1,24 +1,17 @@
 #!/usr/bin/python
 
 import json
-import urllib2
 
-try:
-    result = urllib2.urlopen('https://api.binance.com/api/v1/ticker/allPrices')
-    if result.getcode() == 200:
-        prices = json.loads(result.read())
+from common import load_data, convert_to_watchlist, BASE_CURRENCY
 
-        bi_symbols = []
-        for price in prices:
-            symbol = price['symbol']
-            if not symbol.endswith('BTC'):
-                continue
+response = load_data('https://api.binance.com/api/v1/ticker/allPrices')
+if response != '':
+    prices = json.loads(response)
+    symbols = []
 
-            bi_symbols.append('BINANCE:' + symbol)
+    for price in prices:
+        symbol = price['symbol']
+        if symbol.endswith(BASE_CURRENCY):
+            symbols.append('BINANCE:{0}'.format(symbol))
 
-        bi_symbols.sort()
-        print ','.join(bi_symbols)
-    else:
-        print 'Error retrieving symbols. HTTP result: ', result.getcode()
-except urllib2.URLError:
-    print 'Error retrieving symbols.'
+    convert_to_watchlist(symbols)
