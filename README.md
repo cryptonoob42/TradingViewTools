@@ -15,3 +15,6 @@ and follow the same steps.
 
 Have fun!
 
+# CI status
+![Build Status](https://travis-ci.org/cryptonoob42/TradingViewTools.svg?branch=master)
+
