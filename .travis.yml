@@ -15,9 +15,3 @@ deploy:
     branch: master
   local-dir: pages
 
-notifications:
-  email:
-    recipients:
-      - $NOTIFY_MAIL_ADDRESS
-    on_success: always
-
