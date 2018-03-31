@@ -15,6 +15,8 @@ and follow the same steps.
 
 Have fun!
 
-# CI status
+# Automated Builds
+Each commit triggers a Travis build and there will soon be a cron job to create the watchlists on a weekly basis. The latest watchlists created by the automated builds are available at https://cryptonoob42.github.io/TradingViewTools/.
+
 ![Build Status](https://travis-ci.org/cryptonoob42/TradingViewTools.svg?branch=master)
 
