@@ -1,5 +1,9 @@
 language: python
 
+branches:
+  only:
+    - master
+
 script:
 - mkdir pages
 - python python/tv_watchlist_binance_btc.py > pages/binance_btc.txt
