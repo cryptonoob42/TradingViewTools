@@ -1,4 +1,5 @@
 language: python
+
 script:
 - mkdir pages
 - python python/tv_watchlist_binance_btc.py > pages/binance_btc.txt
@@ -13,4 +14,10 @@ deploy:
   on:
     branch: master
   local-dir: pages
+
+notifications:
+  email:
+    recipients:
+      - $NOTIFY_MAIL_ADDRESS
+    on_success: always
 
