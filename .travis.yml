@@ -3,7 +3,7 @@ script:
 - mkdir pages
 - python python/tv_watchlist_binance_btc.py > pages/binance_btc.txt
 - python python/tv_watchlist_bittrex_btc.py > pages/bittrex_btc.txt
-- sed "s/_BUILDTIMESTAMP_/`date`/g" docs/index.html.in pages/index.html
+- sed "s/_BUILDTIMESTAMP_/`date`/g" docs/index.html.in > pages/index.html
 
 deploy:
   provider: pages
